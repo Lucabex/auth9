@@ -1,0 +1,6 @@
+@auth9_HostAddress = http://localhost:5195
+
+GET {{auth9_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
