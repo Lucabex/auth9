@@ -68,8 +68,8 @@ public class AuthControllers : ControllerBase
     {
         var client = _factory.CreateClient();
         var url = "https://lichess.org/api/puzzle/daily";
-        var response = await client.GetFromJsonAsync<PuzzleDaily>(url);
-        if(response?.Solution==null || response?.Fen== null)
+        var response = await client.GetFromJsonAsync<PuzzleResp>(url);
+        if(response?.Puzzle.Solution==null || response?.Puzzle.Fen== null)
         {
             return StatusCode(503,"Service not availabe try again later");
         }
